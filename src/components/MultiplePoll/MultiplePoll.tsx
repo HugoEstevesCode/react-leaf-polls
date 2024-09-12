@@ -10,7 +10,7 @@ interface MultiplePollProps {
   results: Result[]
   theme?: Theme
   isVoted?: boolean
-  isVotedId?: number
+  isVotedId?: number | number[]
   onVote?(item: Result, results: Result[]): void
 }
 
@@ -20,7 +20,7 @@ const MultiplePoll = ({
   theme,
   onVote,
   isVoted,
-  isVotedId,
+  isVotedId
 }: MultiplePollProps) => {
   const [voted, setVoted] = useState<boolean>(false)
   const answerRefs = useRef<RefObject<HTMLDivElement>[]>(
